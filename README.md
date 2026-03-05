@@ -101,7 +101,7 @@ client.release()
 
 ## Available Models
 
-This SDK currently supports **real-time streaming models only**. For video generation (text-to-video, image-to-video, video-to-video) and image generation models, use the [Decart TypeScript SDK](https://github.com/DecartAI/sdk).
+This SDK currently supports **real-time streaming models only**. Video and image generation models (text-to-video, image-to-video, video-to-video, etc.) are available via a straightforward HTTP API -- see the [API docs](https://docs.platform.decart.ai/api-reference/create-job-lucy-pro-t2v).
 
 | Model | Constant | Resolution | FPS |
 |-------|----------|-----------|-----|
