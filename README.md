@@ -21,43 +21,25 @@ Android SDK for real-time AI video transformation.
 
 ## Installation
 
-The SDK is not yet published to Maven Central. Use a local composite build:
-
-1. Clone this repo next to your project:
-
-```
-your-projects/
-  decart-android/
-  your-app/
-```
-
-2. In your app's `settings.gradle.kts`:
+Add the JitPack repository to your `settings.gradle.kts`:
 
 ```kotlin
-includeBuild("../decart-android") {
-    dependencySubstitution {
-        substitute(module("ai.decart:sdk")).using(project(":sdk"))
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 ```
 
-3. In your app's `build.gradle.kts`:
+Add the dependency to your app's `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("ai.decart:sdk")
+    implementation("com.github.DecartAI.decart-android:sdk:0.1.0")
 }
 ```
-
-<!--
-**Maven Central** (coming soon):
-
-```kotlin
-dependencies {
-    implementation("ai.decart:sdk:<version>")
-}
-```
--->
 
 ## Quick Start
 

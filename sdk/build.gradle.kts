@@ -2,7 +2,11 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
+    `maven-publish`
 }
+
+group = "com.github.DecartAI"
+version = findProperty("VERSION_NAME") ?: "0.1.0"
 
 android {
     namespace = "ai.decart.sdk"
@@ -54,4 +58,17 @@ dependencies {
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = project.group.toString()
+                artifactId = "sdk"
+                version = project.version.toString()
+            }
+        }
+    }
 }
